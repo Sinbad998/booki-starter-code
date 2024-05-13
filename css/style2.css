@@ -1,6 +1,7 @@
 /******** GENERAL **********/
 * {
     font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
 }
 
 :root {
@@ -19,12 +20,18 @@ body {
     margin: 0 auto;
 }
 
+.main-container>*:not(header) {
+    padding: 0 2em;
+}
+
+/*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
     body{
         padding: 0 2.5em;
     }
 }
 
+/*MOBILE*/
 @media (max-width: 767.98px) {
     body{
         margin-top: 1em;
@@ -43,12 +50,14 @@ a {
     text-decoration: none;
 }
 
+/*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
     body{
         padding: 0 2.5em;
     }
 }
 
+/*MOBILE*/
 @media (max-width: 767.98px) {
     .main-container{
         justify-content: center;
@@ -87,34 +96,48 @@ header>div>a:hover {
     border-top-color: #007bff; 
 }
 
+/*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
     body{
         padding: 0 2.5em;
     }
 }
 
+/*MOBILE*/
 @media (max-width: 767.98px) {
     header{
         justify-content: center;
         flex-wrap: wrap;
-        height: 120px;
+        height: 150px;
     }
     
     header>div{
         width: 100%;
         justify-content: space-around;
         border-bottom: 4px solid #F2F2F2;
-        padding-bottom: 20px;
-    };
+        /*padding-bottom: 20px;*/
+        font-size: 1.2em;
+    }
 
     header>div>a{
-        justify-content: center
-    };
+        justify-content: center;
+        border-bottom: 2px solid transparent;
+        width: 50%;
+        text-align: center;
+        border-top: none;
+        font-size: 1.4em;
+    }
+
+    header>div>a:hover {
+        border-bottom-color: #007bff; 
+    }
 
     header>img{
-        height: 1.5em;
-        justify-content: center
-    };    
+        height: 2em;
+        justify-content: center;
+        margin: 30px;
+        
+    }    
 }
 
 @media (min-width: 1440px) {
@@ -142,15 +165,17 @@ nav>p{
     padding: 0%;
     width: 100%;
     margin-top: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 1.5em;
 }
 
+/*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
     body{
         padding: 0 2.5em;
     }
 }
 
+/*MOBILE*/
 @media (max-width: 767.98px) {
     nav{
         justify-content: center;
@@ -161,17 +186,39 @@ nav>p{
     nav>h3{
         width: 100%;
         justify-content: space-around;
-        /*border-bottom: 4px solid #F2F2F2;*/
-       /* padding-bottom: 20px;*/
-       padding-left: 35px;
+        /*border-bottom: 4px solid #F2F2F2;
+        padding-bottom: 20px;
+        padding-left: 35px;*/
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
 
-    };
+    nav button.mobilebtn{
+        display: block;
+    }
+
+    nav button.dekstopbtn{
+        display: none;
+    }
+
+    .mobilebtn {
+        width: 100%; /* Faire en sorte que le bouton de recherche prenne toute la largeur du formulaire */
+        background: none; /* Supprimer l'arrière-plan par défaut du bouton */
+        border: none; /* Supprimer la bordure par défaut du bouton */
+        padding: 0; /* Supprimer le rembourrage par défaut du bouton */
+    }
+
+    .mobilebtn i {
+        display: block; /* Afficher l'icône en tant que bloc pour ajuster sa taille */
+        /*font-size: 24px; Ajuster la taille de l'icône */
+    }
 
     nav>p{
         justify-content: center;
-        margin-left: 35px;
-        width: 0%;
-    };
+        /*margin-left: 35px;
+        width: 0%;*/
+        font-size: 1.9em;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -207,12 +254,14 @@ nav>form>button:hover {
     background-color: #0056b3;
 }
 
+/*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
     body{
         padding: 0 2.5em;
     }
 }
 
+/*MOBILE*/
 @media (max-width: 767.98px) {
     nav>#search-input{
         justify-content: center;
@@ -243,20 +292,13 @@ nav>form>button:hover {
 }
 
 /********* FILTRES *********/
-nav>.Filtres a{
-    background:white;
-    border-radius: 50px;
-    /*padding: 20px 30px;*/
-    color: black;
-    
-}
-
 nav>.Filtres {
     display: flex;
+    margin-top: 1em;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    gap: 3em;
+    gap: 1.5em;
 }
 
 nav>.Filtres>h4{
@@ -265,39 +307,81 @@ nav>.Filtres>h4{
     /*width: 100%;*/
 }
 
+nav>.Filtres a{
+    background:white;
+    border-radius: 50px;
+    /*padding: 20px 30px;*/
+    color: black;
+    border: 1px solid grey;
+    padding: 1em;
+    font-weight:900;
+}
+
+nav>.Filtres i{
+    font-size: 1.2em;
+}
+
+nav>span{
+    font-weight: 900;
+    font-size: 1.3em;
+}
+
+nav>.info{
+    display: flex;
+    gap:1em;
+    align-items: center;
+
+}
+
+/*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
     body{
         padding: 0 2.5em;
     }
 }
 
+/*MOBILE*/
 @media (max-width: 767.98px) {
-    nav>.Filtres a{
-        justify-content: center;
-        flex-wrap: wrap;
-        display: block;
-        width: 50%; /* Diviser l'espace en deux colonnes */
-        box-sizing: border-box; /* Inclure les marges et les bordures dans la largeur */
-        float: left; /* Aligner les liens côte à côte */
-
-    }
-
-    nav>.Filtres i {
-        display: flex;
-        justify-content: center;
-    }
-
-    nav>.Filtres>h4 {
-        margin-bottom: 10px;
-        justify-content: center;
-        width: 100%;
-    }
-
     nav>.Filtres {
         flex-wrap: wrap;
         text-align: center;
     }
 
+    nav>.Filtres>h4 {
+        margin-bottom: 10px;
+        justify-content: flex-start;
+        width: 100%;
+        display: flex;
+        font-size: 1.5em;
+    }
+    
+    nav>.Filtres a{
+        justify-content: center;
+        flex-wrap: wrap;
+        display: flex;
+        width: 44%; /* Diviser l'espace en deux colonnes */
+        box-sizing: border-box; /* Inclure les marges et les bordures dans la largeur */
+        gap: 1em;
+        font-size: 1.2em;
+        font-weight:900;
+    }
+
+    nav>.Filtres i {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+    }
+
+    nav>span{
+        font-size: 1.5em;
+    }
+
+    nav>.info{
+        display: flex;
+        gap:1em;
+        align-items: center;
+        font-size: 1.7em;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -321,7 +405,7 @@ main>.hebergements-and-populaires section {
     border-radius: 20px;
     padding: 30px;
     box-sizing: border-box;
-    margin: 15px;
+   /* margin: 15px;*/
 }
 
 main>.section-title {
@@ -361,15 +445,24 @@ main>.card-title {
     font-size: 16px;
 }
 
+article.card{
+    background-color: white;
+    border-radius: 15px;
+}
+
+/*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
     body{
         padding: 0 2.5em;
     }
 }
+
+/*MOBILE*/
 @media (max-width: 767.98px) {
     main>.hebergements-and-populaires{
-        justify-content: center;
-        flex-wrap: wrap;
+        /*justify-content: center;
+        flex-wrap: wrap;*/
+        flex-direction: column-reverse;
     }
         
     main>.hebergements-and-populaires section{
@@ -428,21 +521,24 @@ main>div>.hebergements {
 main>div>.hebergements>.hebergements-card img{
     width: 100%;
     height: 136px;
-    border-radius: 30px;
+    border-radius: 15px 15px 0px 0px;
 }
 
 main>div>.hebergements>.hebergements-card{
     display: flex;
     flex-direction: row;
     gap: 3em;
+    margin-bottom: 30px;
 }
 
+/*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
     body{
         padding: 0 2.5em;
     }
 }
 
+/*MOBILE*/
 @media (max-width: 767.98px) {
     main>div>.hebergements{
         justify-content: center;
@@ -494,7 +590,7 @@ main>div>.populaires>.populaires-cards img {
    /* border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     */
-    border-radius: 30px;
+    border-radius: 15px 15px 0px 0px;
 }
 
 main>div>.populaires>.populaires-cards .card-content {
@@ -519,16 +615,19 @@ main>div>.populaires>.populaires-cards .card-rating {
     margin-bottom: 5px;
 }
 
+/*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
     body{
         padding: 0 2.5em;
     }
 }
 
+/*MOBILE*/
 @media (max-width: 767.98px) {
     main>div>.populaires{
-        justify-content: center;
-        flex-wrap: wrap;
+        /*justify-content: center;
+        flex-wrap: wrap;*/
+        width: 100%;
 
     }
         
@@ -543,8 +642,7 @@ main>div>.populaires>.populaires-cards .card-rating {
     };
     
     main>div>.populaires>.populaires-cards .card{
-
-        justify-content: center
+        flex-direction: row
     };
 
     main>div>.populaires>.populaires-cards img{
@@ -577,26 +675,29 @@ main>div>.populaires>.populaires-cards .card-rating {
 }
 
 /********* FOOTER ***********/
-.footer-container{
+.footer-container {
     display: flex;
     justify-content: space-between;
     background-color: var(--main-bg-color);
     border-radius: 20px;
     padding: 30px;
     box-sizing: border-box;
-    margin: 0px;
+    margin: 30px 0px;
 }
 
-.footer-container>ul{
+.footer-container>ul {
     list-style-type: none;
+    display: flex;
 }
 
+/*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
     body{
         padding: 0 2.5em;
     }
 }
 
+/*MOBILE*/
 @media (max-width: 767.98px) {
     .footer-container{
        justify-content:center ;
