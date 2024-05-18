@@ -146,7 +146,7 @@ header>div>a:hover {
     }
 }
 
-/********* NAVIGATION FILTRES ***********/
+/********* NAVIGATION ***********/
 nav{
     display: flex;
     width: 100%;
@@ -191,26 +191,6 @@ nav>p{
         padding-left: 35px;*/
         font-size: 2.5em;
         margin-bottom: 15px;
-    }
-
-    nav button.mobilebtn{
-        display: block;
-    }
-
-    nav button.dekstopbtn{
-        display: none;
-    }
-
-    .mobilebtn {
-        width: 100%; /* Faire en sorte que le bouton de recherche prenne toute la largeur du formulaire */
-        background: none; /* Supprimer l'arrière-plan par défaut du bouton */
-        border: none; /* Supprimer la bordure par défaut du bouton */
-        padding: 0; /* Supprimer le rembourrage par défaut du bouton */
-    }
-
-    .mobilebtn i {
-        display: block; /* Afficher l'icône en tant que bloc pour ajuster sa taille */
-        /*font-size: 24px; Ajuster la taille de l'icône */
     }
 
     nav>p{
@@ -273,16 +253,36 @@ nav>form>button:hover {
         width: 100%;
         justify-content: space-around;
 
-    };
+    }
 
     nav>form>button{
         justify-content: center
-    };
+    }
 
     nav>form>button:hover{
         height: 1.5em;
         justify-content: center
-    };
+    }
+
+    nav button.mobilebtn{
+        display: block;
+    }
+
+    nav button.dekstopbtn{
+        display: none;
+    }
+
+    .mobilebtn {
+        width: 100%; /* Faire en sorte que le bouton de recherche prenne toute la largeur du formulaire */
+        background: none; /* Supprimer l'arrière-plan par défaut du bouton */
+        border: none; /* Supprimer la bordure par défaut du bouton */
+        padding: 0; /* Supprimer le rembourrage par défaut du bouton */
+    }
+
+    .mobilebtn i {
+        display: block; /* Afficher l'icône en tant que bloc pour ajuster sa taille */
+        /*font-size: 24px; Ajuster la taille de l'icône */
+    }
 }
 
 @media (min-width: 1440px) {
@@ -448,6 +448,7 @@ main>.card-title {
 article.card{
     background-color: white;
     border-radius: 15px;
+    padding: 5px;
 }
 
 /*TABLETTE*/
@@ -463,6 +464,7 @@ article.card{
         /*justify-content: center;
         flex-wrap: wrap;*/
         flex-direction: column-reverse;
+        gap: 3em;
     }
         
     main>.hebergements-and-populaires section{
@@ -543,17 +545,22 @@ main>div>.hebergements>.hebergements-card{
     main>div>.hebergements{
         justify-content: center;
         flex-wrap: wrap;
+        display: flex;
+        width: 100%;
     }
         
     main>div>.hebergements>.hebergements-card img{
         width: 100%;
-        justify-content: space-around;
+        justify-content: center;
+        height: 10em;
 
-    };
+    }
     
     main>div>.hebergements>.hebergements-card{
-        justify-content: center
-    };
+        justify-content: center;
+        flex-direction: column;
+        width: 96%;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -635,37 +642,38 @@ main>div>.populaires>.populaires-cards .card-rating {
         width: 100%;
         justify-content: space-around;
 
-    };
+    }
     
     main>div>.populaires>.populaires-title{
         justify-content: center
-    };
+    }
     
     main>div>.populaires>.populaires-cards .card{
         flex-direction: row
-    };
+    }
 
     main>div>.populaires>.populaires-cards img{
         justify-content: center;
         flex-wrap: wrap;
-
+        display: flex;
+        width: 50%;
     }
         
     main>div>.populaires>.populaires-cards .card-content{
         justify-content: center
-    };
+    }
     
     main>div>.populaires>.populaires-cards .card-title{
         justify-content: center
-    };
+    }
     
     main>div>.populaires>.populaires-cards .card-subtitle{
         justify-content: center
-    };
+    }
 
     main>div>.populaires>.populaires-cards .card-rating{
         justify-content: center
-    };
+    }
 }  
 
 @media (min-width: 1440px) {
