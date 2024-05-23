@@ -14,6 +14,10 @@
     color: var(--main-color);
 }
 
+i.fa-xs.fa-solid.fa-star.neutral-star {
+    color: gainsboro;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -36,7 +40,21 @@ body {
     body{
         margin-top: 1em;
     }
+
+    .main-container>*:not(nav) {
+        padding: 0em;
+    }
+}    
+
+@media (min-width: 1440px) {
+    div.main-container{
+        width: 1440px;
+    }
 }
+
+
+
+
 
 /********* MAIN CONTAINER ***********/
 .main-container {
@@ -44,6 +62,7 @@ body {
     max-width: 1440px;
     box-sizing: border-box;
 }
+
 
 a {
     color: inherit;
@@ -63,6 +82,8 @@ a {
         justify-content: center;
         flex-wrap: wrap;
     }
+
+
 }
 
 @media (min-width: 1440px) {
@@ -71,11 +92,18 @@ a {
     }
 }
 
+
+
+
+
+
 /********* HEADER ***********/
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 35px;
+    margin-right: 18px;
 }
 header>img{
     justify-content: flex-start;
@@ -98,9 +126,7 @@ header>div>a:hover {
 
 /*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
-    body{
-        padding: 0 2.5em;
-    }
+
 }
 
 /*MOBILE*/
@@ -109,6 +135,7 @@ header>div>a:hover {
         justify-content: center;
         flex-wrap: wrap;
         height: 150px;
+        margin: 0px 0px 0px 0px;
     }
     
     header>div{
@@ -129,7 +156,7 @@ header>div>a:hover {
     }
 
     header>div>a:hover {
-        border-bottom-color: #007bff; 
+        border-bottom-color: #007bff 
     }
 
     header>img{
@@ -145,6 +172,12 @@ header>div>a:hover {
         width: 1440px;
     }
 }
+
+
+
+
+
+
 
 /********* NAVIGATION ***********/
 nav{
@@ -170,9 +203,7 @@ nav>p{
 
 /*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
-    body{
-        padding: 0 2.5em;
-    }
+
 }
 
 /*MOBILE*/
@@ -189,7 +220,7 @@ nav>p{
         /*border-bottom: 4px solid #F2F2F2;
         padding-bottom: 20px;
         padding-left: 35px;*/
-        font-size: 2.5em;
+        font-size: 1.5em;
         margin-bottom: 15px;
     }
 
@@ -197,7 +228,7 @@ nav>p{
         justify-content: center;
         /*margin-left: 35px;
         width: 0%;*/
-        font-size: 1.9em;
+        font-size: 1.1em;
     }
 }
 
@@ -207,13 +238,24 @@ nav>p{
     }
 }
 
+
+
+
+
+
+
 /********* FORMULAIRE DE RECHERCHE ***********/
+i.fa-solid.fa-location-dot{
+    padding: 15px;
+    background-color: gainsboro;
+    border-radius: 10px 0px 0px 10px;
+}
 
 nav>#search-input {
     width: 300px;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid gainsboro;
     border-radius: 5px;
 }
 
@@ -226,19 +268,31 @@ nav>form>button {
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px 15px 15px 0px;
     cursor: pointer;
+}
+
+nav>form {
+    display: flex;
 }
 
 nav>form>button:hover {
     background-color: #0056b3;
 }
 
+nav button.mobilebtn {
+    display: none;
+}
+
+input#search-input {
+    text-align: center;
+    font-size: 1em;
+    border: solid 0.2px gainsboro;
+}
+
 /*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
-    body{
-        padding: 0 2.5em;
-    }
+
 }
 
 /*MOBILE*/
@@ -266,18 +320,20 @@ nav>form>button:hover {
 
     nav button.mobilebtn{
         display: block;
+        box-shadow: 1px 1px 7px gray;
     }
 
-    nav button.dekstopbtn{
+    nav button.desktopbtn{
         display: none;
     }
 
-    .mobilebtn {
-        width: 100%; /* Faire en sorte que le bouton de recherche prenne toute la largeur du formulaire */
-        background: none; /* Supprimer l'arrière-plan par défaut du bouton */
-        border: none; /* Supprimer la bordure par défaut du bouton */
-        padding: 0; /* Supprimer le rembourrage par défaut du bouton */
-    }
+    /*.mobilebtn {
+        width: 100%; 
+        background: none; 
+        border: none; 
+        padding: 0; 
+    }*/
+    
 
     .mobilebtn i {
         display: block; /* Afficher l'icône en tant que bloc pour ajuster sa taille */
@@ -291,6 +347,12 @@ nav>form>button:hover {
     }
 }
 
+
+
+
+
+
+
 /********* FILTRES *********/
 nav>.Filtres {
     display: flex;
@@ -298,7 +360,7 @@ nav>.Filtres {
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    gap: 1.5em;
+    gap: 1.3em;
 }
 
 nav>.Filtres>h4{
@@ -312,9 +374,11 @@ nav>.Filtres a{
     border-radius: 50px;
     /*padding: 20px 30px;*/
     color: black;
-    border: 1px solid grey;
+    border: 2px solid gainsboro;
     padding: 1em;
     font-weight:900;
+    display: flex;
+    gap: 0.5em;
 }
 
 nav>.Filtres i{
@@ -330,14 +394,13 @@ nav>.info{
     display: flex;
     gap:1em;
     align-items: center;
+    margin-bottom: 30px;
 
 }
 
 /*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
-    body{
-        padding: 0 2.5em;
-    }
+
 }
 
 /*MOBILE*/
@@ -345,6 +408,7 @@ nav>.info{
     nav>.Filtres {
         flex-wrap: wrap;
         text-align: center;
+        gap: 0.9em;
     }
 
     nav>.Filtres>h4 {
@@ -357,12 +421,12 @@ nav>.info{
     
     nav>.Filtres a{
         justify-content: center;
-        flex-wrap: wrap;
+        /*flex-wrap: wrap;*/
         display: flex;
         width: 44%; /* Diviser l'espace en deux colonnes */
         box-sizing: border-box; /* Inclure les marges et les bordures dans la largeur */
         gap: 1em;
-        font-size: 1.2em;
+        font-size: 0.9em;
         font-weight:900;
     }
 
@@ -380,7 +444,9 @@ nav>.info{
         display: flex;
         gap:1em;
         align-items: center;
-        font-size: 1.7em;
+        font-size: 1em;
+        margin-top: 1em;
+        margin-bottom: 1em;
     }
 }
 
@@ -390,14 +456,22 @@ nav>.info{
     }
 }
 
+
+
+
+
+
+
 /********* HEBERGEMENTS AND POPULAIRES ***********/
+/*
 main{
     display: flex;
-}
+}*/
 
 main>.hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 4em;
 }
 
 main>.hebergements-and-populaires section {
@@ -453,9 +527,7 @@ article.card{
 
 /*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
-    body{
-        padding: 0 2.5em;
-    }
+
 }
 
 /*MOBILE*/
@@ -470,50 +542,94 @@ article.card{
     main>.hebergements-and-populaires section{
         width: 100%;
         justify-content: space-around;
-
-
-    };
+        background-color: var(--main-bg-color);
+    }
     
     main>.section-title{
         justify-content: center
-    };
+    }
     
     main>.euro{
 
         justify-content: center
-    };
+    }
 
     main>.neutral-star{
 
         justify-content: center
-    };
+    }
     
     main>.cta{
         justify-content: center
-    };
+    }
     
     main>.card{
 
         justify-content: center
-    };
+    }
 
     main>.card img{
 
         justify-content: center
-    };
+    }
 
     main>.card-title{
 
         justify-content: center
-    };
+    }
+    
+    /* Small devices (phones, less than 768px) */
+    @media (max-width: 767.98px) {
+        /* ... */
+    }
 
 }
+
+/*@media (max-width: 1024px) {
+    .hebergements-and-populaires {
+        flex-direction: column;
+    }
+
+    .hebergements {
+        width: 100%;
+    }
+
+    .populaires {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .populaires-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .populaires-cards a {
+        width: 30%;
+    }
+
+    .populaires-cards .card-title {
+        font-size: 14px;
+    }
+
+    .populaires-cards .card-subtitle {
+        font-size: 13px;
+    }
+}*/
 
 @media (min-width: 1440px) {
     div.main-container{
         width: 1440px;
     }
 }
+
+
+
+
+
+
+
 
 /********* HEBERGEMENTS ***********/
 main>div>.hebergements {
@@ -533,20 +649,28 @@ main>div>.hebergements>.hebergements-card{
     margin-bottom: 30px;
 }
 
+main>div>.hebergements a{
+    width: 100%;
+    box-shadow: 2px 2px 9px gainsboro;
+    border-radius: 15px 15px 15px 15px;
+}
+
 /*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
-    body{
+    /*body{
         padding: 0 2.5em;
-    }
+    }*/
 }
 
 /*MOBILE*/
 @media (max-width: 767.98px) {
+
     main>div>.hebergements{
         justify-content: center;
         flex-wrap: wrap;
         display: flex;
         width: 100%;
+        background-color: white;
     }
         
     main>div>.hebergements>.hebergements-card img{
@@ -561,6 +685,11 @@ main>div>.hebergements>.hebergements-card{
         flex-direction: column;
         width: 96%;
     }
+
+    main>div>.hebergements>p{
+        justify-content: flex-start;
+        display: flex;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -569,9 +698,22 @@ main>div>.hebergements>.hebergements-card{
     }
 }
 
+
+
+
+
+
+
+
+
+
 /********* POPULAIRES ***********/
 main>div>.populaires {
     width: 32%;
+}
+
+h2.section-title {
+    font-size: 1.2em;
 }
 
 main>div>.populaires>.populaires-cards{
@@ -588,16 +730,17 @@ main>div>.populaires>.populaires-title {
 main>div>.populaires>.populaires-cards .card {
     display: flex;
     margin-top: 33px;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 main>div>.populaires>.populaires-cards img {
-    width: 100%;
-    height: 136px;
+    /*width: 100%;*/
+    width: 10em;
+    height: 150px;
    /* border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     */
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 15px 0px 0px 15px;
 }
 
 main>div>.populaires>.populaires-cards .card-content {
@@ -624,9 +767,7 @@ main>div>.populaires>.populaires-cards .card-rating {
 
 /*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
-    body{
-        padding: 0 2.5em;
-    }
+   
 }
 
 /*MOBILE*/
@@ -644,10 +785,6 @@ main>div>.populaires>.populaires-cards .card-rating {
 
     }
     
-    main>div>.populaires>.populaires-title{
-        justify-content: center
-    }
-    
     main>div>.populaires>.populaires-cards .card{
         flex-direction: row
     }
@@ -656,15 +793,16 @@ main>div>.populaires>.populaires-cards .card-rating {
         justify-content: center;
         flex-wrap: wrap;
         display: flex;
-        width: 50%;
+        width: 35%;
+        height: 7em;
     }
         
-    main>div>.populaires>.populaires-cards .card-content{
+    /*main>div>.populaires>.populaires-cards .card-content{
         justify-content: center
-    }
+    }*/
     
     main>div>.populaires>.populaires-cards .card-title{
-        justify-content: center
+        font-size: 0.9em;
     }
     
     main>div>.populaires>.populaires-cards .card-subtitle{
@@ -682,33 +820,132 @@ main>div>.populaires>.populaires-cards .card-rating {
     }
 }
 
-/********* FOOTER ***********/
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 30px;
-    box-sizing: border-box;
-    margin: 30px 0px;
+
+
+
+
+
+/***********Activités************/
+main>div>.Activités-Marseille {
+    width: 100%;
+    margin-top: 2em;
 }
 
-.footer-container>ul {
-    list-style-type: none;
-    display: flex;
+main>div>.Activités-Marseille img{
+    width: 100%;
+    height: 25em;
+    border-radius: 15px 15px 0px 0px;
 }
+
+main>div>.Activités-Marseille>.Activités-card{
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    margin-bottom: 4em;
+}
+
+main>div>.Activités-Marseille a{
+    width: 100%;
+    box-shadow: 2px 2px 9px gainsboro;
+    border-radius: 15px 15px 15px 15px;
+}
+
+main>div>.Activités-Marseille>.Activités-card>.card-content>h3{
+    margin-left: 30px;
+}
+
+
 
 /*TABLETTE*/
 @media (max-width: 1440px) and (min-width: 767.98px) {
-    body{
-        padding: 0 2.5em;
-    }
+
 }
 
 /*MOBILE*/
 @media (max-width: 767.98px) {
-    .footer-container{
-       justify-content:center ;
+    main>div>.Activités-Marseille {
+        width: 100%;
+        margin-top: 2em;
+    }
+    
+    main>div>.Activités-Marseille img{
+        width: 100%;
+        height: 15em;
+        border-radius: 15px 15px 0px 0px;
+    }
+    
+    main>div>.Activités-Marseille>.Activités-card{
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+        margin-bottom: 4em;
+    }
+    
+    main>div>.Activités-Marseille a{
+        width: 100%;
+        box-shadow: 2px 2px 9px gainsboro;
+        border-radius: 15px 15px 15px 15px;
+    }
+    
+    main>div>.Activités-Marseille>.Activités-card>.card-content>h3{
+        margin-left: 30px;
+    }
+}  
+
+@media (min-width: 1440px) {
+    div.main-container{
+        width: 1440px;
+    }
+}
+
+
+
+
+
+/********* FOOTER ***********/
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--main-bg-color);
+    /*padding: 30px;*/
+    box-sizing: border-box;
+    /*margin: 30px 0px;*/
+    gap: 15em;
+}
+
+.footer-container>article>ul {
+    list-style-type: none;
+    
+}
+
+.footer-container>article>ul>li {
+    padding: 6px;
+}
+
+/*TABLETTE*/
+@media (max-width: 1440px) and (min-width: 767.98px) {
+
+}
+
+/*MOBILE*/
+@media (max-width: 767.98px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--main-bg-color);
+        /*padding: 30px;*/
+        box-sizing: border-box;
+        /*margin: 30px 0px;*/
+        gap: 0em;
+    }
+    
+    .footer-container>article>ul {
+        list-style-type: none;
+        
+    }
+    
+    .footer-container>article>ul>li {
+        padding: 6px;
     }
 }  
 
